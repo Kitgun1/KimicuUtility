@@ -1,0 +1,9 @@
+{
+  "name": "com.blackbox.kiutility",
+  "version": "1.0.0",
+  "displayName": "Kimicu Utility",
+  "description": "Пакет сделан для облегчения жизни",
+  "unity": "2019.1",
+  "dependencies": {
+  }
+}
