@@ -1,6 +1,6 @@
 {
   "name": "com.blackbox.kiutility",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Kimicu Utility",
   "description": "Пакет сделан для облегчения жизни",
   "unity": "2019.1",
@@ -14,7 +14,7 @@
     },
     {
       "displayName": "Components",
-      "description": "Обязательные ресурсы для Kimicu Utility",
+      "description": "Примеры использования компонентов",
       "path": "Sample~/Components"
     },
     {
