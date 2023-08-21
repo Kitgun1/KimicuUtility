@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
+#if UNITY_WEBGL && !UNITY_EDITOR
 using JetBrains.Annotations;
 using UnityEngine;
 using Agava.YandexGames;
+#endif
 using KiUtilities;
 using Newtonsoft.Json.Linq;
 using PlayerPrefs = UnityEngine.PlayerPrefs;
