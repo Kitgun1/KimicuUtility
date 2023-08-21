@@ -3,7 +3,7 @@
 Этот пакет был разработан специально для упрощения разработки игр на Unity.
 ## Как добавить в проект:
 В Unity открыть 'Window' -> 'Package Manager'.
-##### Добавляем зависимости:
+### Добавляем зависимости:
 Жмем на '+' и выбрать 'Add package by name...' и вставить ссылку: 
 ```
 com.unity.nuget.newtonsoft-json
@@ -21,7 +21,7 @@ https://github.com/forcepusher/com.agava.webutility.git
 ```
 https://github.com/forcepusher/com.agava.yandexgames.git
 ```
-##### Тепрь добавляем наш пакет
+### Тепрь добавляем наш пакет
 Жмем на '+' и выбрать 'Add package from git URL...' и вставить эти дополнительные ссылки: 
 ```
 https://github.com/Kitgun1/KimicuUtility.git
