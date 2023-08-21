@@ -21,6 +21,7 @@ https://github.com/forcepusher/com.agava.webutility.git
 ```
 https://github.com/forcepusher/com.agava.yandexgames.git
 ```
+Также нужно добавить [NaughtyAttribute](https://github.com/dbrizov/NaughtyAttributes)
 ### Тепрь добавляем наш пакет
 Жмем на '+' и выбрать 'Add package from git URL...' и вставить эти дополнительные ссылки: 
 ```
