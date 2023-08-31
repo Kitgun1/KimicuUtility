@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
     [Serializable]
     public class AlphaProperty

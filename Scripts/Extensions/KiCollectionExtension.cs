@@ -4,27 +4,56 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
     public static class KiCollectionExtension
     {
         #region List
 
+        /// <summary> Ограничивает максимальное кол-во элементов в списке. </summary>
         public static void Clamp<T>(this List<T> list, int maximum = 1)
         {
             if (maximum < 1) maximum = 0;
 
             if (list.Count > maximum)
             {
-                list.RemoveRange(list.Count - maximum, list.Count - maximum);
-            }
-            else if (list.Count < maximum)
-            {
-                int count = maximum - list.Count;
-                for (int i = 0; i < count; i++) list.Add(default);
+                list.RemoveRange(maximum, list.Count - maximum);
             }
         }
 
+        /// <summary> Ограничивает список максимальным и минимальным значением. </summary>
+        /// <param name="defaultElement"> Элемент который будет добавлен при нехватке элементов в списке. </param>
+        public static void Clamp<T>(this List<T> list, int minimum = 1, int maximum = 1, T defaultElement = default)
+        {
+            minimum = Mathf.Clamp(minimum, 1, int.MaxValue);
+            maximum = Mathf.Clamp(maximum, minimum, int.MaxValue);
+
+            if (list.Count > maximum)
+            {
+                list.RemoveRange(maximum, list.Count - maximum);
+            }
+            else if (list.Count < minimum)
+            {
+                int count = minimum - list.Count;
+                for (int i = 0; i < count; i++) list.Insert(0, defaultElement);
+            }
+        }
+
+        /// <summary> Ограничивает список максимальным и минимальным значением. </summary>
+        /// <param name="defaultElement"> Элемент который будет добавлен при нехватке элементов в списке. </param>
+        public static void Clamp<T>(this List<T> list, int minimum = 0, T defaultElement = default)
+        {
+            minimum = Mathf.Clamp(minimum, 0, int.MaxValue);
+
+            if (list.Count < minimum)
+            {
+                int count = minimum - list.Count;
+                for (int i = 0; i < count; i++) list.Insert(0, defaultElement);
+            }
+        }
+
+        /// <summary> Делит список на списки. </summary>
+        /// <param name="percentRatio"> Делит список на списки по процентное соотношение. </param>
         public static List<List<T>> SplitList<T>(this List<T> list, int percentRatio)
         {
             int count = list.Count;
@@ -35,11 +64,17 @@ namespace KiUtilities
             return result;
         }
 
-        public static List<List<T>> SplitList<T>(this List<T> list, int n, double[] percentages)
-        {
-            if (percentages.Length != n) throw new ArgumentException("Number of percentages should be equal to n");
 
+        /// <summary> Делит список на списки. </summary>
+        /// <param name="percentages">  Сумма элементов не должна превышать 100 и не должна быть меньше 0 и каждый элемент должен быть положительным </param>
+        public static List<List<T>> SplitList<T>(this List<T> list, double[] percentages)
+        {
             double sumPercentages = percentages.Sum();
+
+            for (int i = 0; i < percentages.Length; i++)
+            {
+                if (percentages[i] < 0) throw new ArgumentOutOfRangeException($"{i} элемент списка не может быть < 0f");
+            }
 
             if (sumPercentages is > 100 or < 0)
                 throw new ArgumentException("Sum of percentages should be in range (0, 100)");
@@ -47,6 +82,8 @@ namespace KiUtilities
             var result = new List<List<T>>();
 
             int startIndex = 0;
+            int n = percentages.Length;
+
             for (int i = 0; i < n; i++)
             {
                 int count = (int)(list.Count * percentages[i] / 100);
@@ -61,6 +98,7 @@ namespace KiUtilities
             return result;
         }
 
+        /// <summary> Делит список на части. </summary>
         public static List<List<T>> DivideList<T>(this List<T> list, int count)
         {
             int size = list.Count / count;
@@ -85,7 +123,7 @@ namespace KiUtilities
         #endregion
 
         #region Dictionary
-
+        
         public static Dictionary<string, JToken> ToDictionary(this string jsonString)
         {
             var dictionary = new Dictionary<string, JToken>();

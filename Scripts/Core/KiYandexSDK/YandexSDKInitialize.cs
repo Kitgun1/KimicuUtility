@@ -9,20 +9,19 @@ namespace KiYandexSDK
 {
     public sealed class YandexSDKInitialize : MonoBehaviour
     {
-#if UNITY_EDITOR
-        private const float InitializeDelay = 0.2f;
-#endif
+        [SerializeField] private float _initializeDelay = 0.2f; 
 
         private IEnumerator Start()
         {
-#if UNITY_WEBGL && !UNITY_EDITOR
-            yield return YandexGamesSdk.Initialize();
-            yield return YandexData.Initialize();
-            YandexSDK.Initialize();
+#if !UNITY_EDITOR && UNITY_WEBGL
+            yield return YandexGamesSdk.Initialize(); // Инициализация Agava SDK
+            yield return YandexData.Initialize(); // Инициализация сохранений
+            AdvertSDK.AdvertInitialize();  // Инициализация рекламы
+            WebGL.Initialize(null);  // Инициализация WebGL
             InitializeSuccess();
-#endif
-#if UNITY_EDITOR
-            yield return new WaitForSecondsRealtime(InitializeDelay);
+            yield break;
+#else
+            yield return new WaitForSecondsRealtime(_initializeDelay);
 #endif
             InitializeSuccess();
         }

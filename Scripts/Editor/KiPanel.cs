@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-namespace KiUtilities.Editor
+namespace KiUtility.Editor
 {
     public class KiPanel : EditorWindow
     {

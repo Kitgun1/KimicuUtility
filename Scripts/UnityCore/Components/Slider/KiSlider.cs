@@ -1,11 +1,11 @@
 ﻿using System.Globalization;
-using KiUtilities.Enums;
+using KiUtility;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace KiUtilities.CustomComponent
+namespace KiUtility.CustomComponent
 {
     public class KiSlider : MonoBehaviour
     {
@@ -13,9 +13,9 @@ namespace KiUtilities.CustomComponent
         [BoxGroup("Dependencies")] public Image ValueImage;
 
         [BoxGroup("Properties"), SerializeField] private ValueStringFormat _maxValueFormat;
-        [BoxGroup("Properties"), SerializeField] private float _minValue;
-        [BoxGroup("Properties"), SerializeField] private float _maxValue;
-        [BoxGroup("Properties"), SerializeField] private float _value;
+        [BoxGroup("Properties"), SerializeField] private float _minValue = 0f;
+        [BoxGroup("Properties"), SerializeField] private float _maxValue = 10f;
+        [BoxGroup("Properties"), SerializeField] private float _value = 5f;
 
         public float Value
         {

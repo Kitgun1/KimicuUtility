@@ -1,6 +1,6 @@
 {
   "name": "com.blackbox.kiutility",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "displayName": "Kimicu Utility",
   "description": "Пакет сделан для облегчения жизни",
   "unity": "2019.1",
@@ -8,19 +8,9 @@
   },
   "samples": [
     {
-      "displayName": "Resources",
-      "description": "Обязательные ресурсы для Kimicu Utility c ресурсами",
-      "path": "Sample~/Resources"
-    },
-    {
-      "displayName": "Components",
-      "description": "Примеры использования компонентов",
-      "path": "Sample~/Components"
-    },
-    {
-      "displayName": "Yandex",
-      "description": "Пример для использования YandexSDK",
-      "path": "Sample~/Yandex"
+      "displayName": "Coroutines",
+      "description": "Примеры использования корутин",
+      "path": "Sample~/Coroutines"
     }
   ]
 }

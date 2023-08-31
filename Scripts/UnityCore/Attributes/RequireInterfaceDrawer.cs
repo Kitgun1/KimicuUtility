@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace KiUtilities.Attributes
+namespace KiUtility.Attributes
 {
 #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(RequireInterface))]

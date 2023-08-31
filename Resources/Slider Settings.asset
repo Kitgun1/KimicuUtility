@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9591f0f6c9d4ca18c6aa73de1676f64, type: 3}
-  m_Name: SliderSettings
+  m_Script: {fileID: 11500000, guid: e7a72e9e83b67c34b99604e75891e06f, type: 3}
+  m_Name: Slider Settings
   m_EditorClassIdentifier: 
-  _sliderPrefab: {fileID: 4810721726485346896, guid: 2c398ea77a639f243a16177c899eda7b, type: 3}
+  _prefabPrefab: {fileID: 7989842878427553933, guid: b2293868185f7234a90450c90307958e, type: 3}

@@ -1,8 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
+    /// <summary>
+    /// Структура с объектом и его шансом в пределах [0, 100]
+    /// </summary>
     [Serializable]
     public struct ObjectChance<T>
     {
@@ -10,6 +13,9 @@ namespace KiUtilities
 
         [Range(0, 100), SerializeField] private float _chance;
 
+        /// <summary>
+        /// Шанс объекта в пределах [0, 100]
+        /// </summary>
         public float Chance
         {
             get => _chance;

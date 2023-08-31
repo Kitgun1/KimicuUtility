@@ -1,4 +1,4 @@
-﻿namespace KiUtilities.Enums
+﻿namespace KiUtility
 {
     public enum IgnoreAxis
     {

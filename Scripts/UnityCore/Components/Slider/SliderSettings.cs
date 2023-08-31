@@ -1,20 +1,12 @@
-﻿using KiUtilities.CustomComponent;
-using KiUtilities.Enums;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-namespace KiUtilities.CustomComponent
+namespace KiUtility.CustomComponent
 {
     [CreateAssetMenu(fileName = "new Slider Settings", menuName = "Kimicu/SliderSettings", order = 0)]
     public class SliderSettings : ScriptableObject
     {
-        [SerializeField] private KiSlider _sliderPrefab;
+        [SerializeField] private KiSlider _prefabPrefab;
 
-        public KiSlider Slider
-        {
-            get => _sliderPrefab;
-            private set => _sliderPrefab = value;
-        }
+        public KiSlider Prefab => _prefabPrefab;
     }
 }

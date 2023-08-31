@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using Agava.YandexGames;
 #endif
-using KiUtilities;
+using KiUtility;
 using Newtonsoft.Json.Linq;
 using PlayerPrefs = UnityEngine.PlayerPrefs;
 
@@ -42,8 +42,8 @@ namespace KiYandexSDK
 #endif
             while (true)
             {
-                yield return null;
                 if (_initialized) yield break;
+                yield return null;
             }
         }
 
@@ -80,7 +80,6 @@ namespace KiYandexSDK
         /// <summary>
         /// Возвращает значение по ключу [key] и по типу [defaultValue]
         /// </summary>
-        /// <param name="onSuccess">Успех выгрузки</param>
         /// <param name="key">Значение по которому будет происходить поиск</param>
         /// <param name="defaultValue">Стандартное значение, если не найдет</param>
         public static JToken Load(string key, JToken defaultValue)

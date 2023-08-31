@@ -2,28 +2,29 @@
 using System.Collections;
 using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
     public partial class KiCoroutine
     {
         /// <summary>
-        /// Запускает задержку
+        /// Задерживает выполнение кода на заданное количество секунд и затем вызывает указанный делегат.
         /// </summary>
-        /// <param name="seconds">длительность задержки</param>
-        /// <param name="onEnd">вызывается при завршении всех итераций</param>
+        /// <param name="seconds">Количество секунд задержки.</param>
+        /// <param name="onEnd">Делегат, который будет вызван после задержки.</param>
         public static IEnumerator Delay(float seconds, Action onEnd)
         {
             yield return new WaitForSeconds(seconds);
             onEnd?.Invoke();
         }
 
-        /// <summary>
-        /// Запускает цикл с определенным количеством итерации
-        /// </summary>
-        /// <param name="seconds">длительность всех итераций</param>
-        /// <param name="repetitionsAmount">количество итераций</param>
-        /// <param name="onNext">вызывается при окончании итерации</param>
-        /// <param name="onEnd">вызывается при завршении всех итераций</param>
+        /// <summary> Задержка с количеством итераций. </summary>
+        /// <param name="seconds"> Количество секунд между каждым повторением заданной операции. </param>
+        /// <param name="repetitionsAmount"> количество повторений заданной операции. По умолчанию равно 1. </param>
+        /// <param name="onNext">
+        /// Делегат, который вызывается после каждого повторения заданной операции.
+        /// Он принимает один параметр типа uint, который указывает, сколько повторений осталось.
+        /// </param>
+        /// <param name="onEnd">Делегат, который вызывается после завершения всех повторений заданной операции. </param>
         public static IEnumerator RecurringDelay(float seconds, uint repetitionsAmount = 1, Action<uint> onNext = null,
             Action onEnd = null)
         {
@@ -38,11 +39,11 @@ namespace KiUtilities
         }
 
         /// <summary>
-        /// Запускает цикл
+        /// Задержка с циклом.
         /// </summary>
-        /// <param name="seconds">длительность цикла</param>
-        /// <param name="onUpdate">вызывается каждый кадр</param>
-        /// <param name="onEnd">вызывается по завершению цикла</param>
+        /// <param name="seconds">Продолжительность задержки в секундах.</param>
+        /// <param name="onUpdate">Действие, выполняемое при обновлении кадра.</param>
+        /// <param name="onEnd">Действие, выполняемое по завершении задержки.</param>
         public static IEnumerator CyclicDelay(float seconds, Action<float> onUpdate, Action onEnd = null)
         {
             float time = 0;

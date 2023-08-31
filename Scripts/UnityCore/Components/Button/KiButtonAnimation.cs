@@ -2,7 +2,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
     [RequireComponent(typeof(KiButton))]
     [DisallowMultipleComponent]

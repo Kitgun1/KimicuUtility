@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
     public sealed class KiCoroutines : MonoBehaviour
     {
@@ -24,12 +23,12 @@ namespace KiUtilities
 
         private static KiCoroutines _instance;
 
-        public static UnityEngine.Coroutine StartRoutine(IEnumerator enumerator)
+        internal static Coroutine StartRoutine(IEnumerator enumerator)
         {
             return Instance.StartCoroutine(enumerator);
         }
 
-        public static void StopRoutine([NotNull] UnityEngine.Coroutine routine)
+        internal static void StopRoutine([NotNull] Coroutine routine)
         {
             Instance.StopCoroutine(routine);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace KiUtilities
+namespace KiUtility
 {
     [DisallowMultipleComponent]
     public sealed class KiButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler,

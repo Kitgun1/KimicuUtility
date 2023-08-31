@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace KiUtilities
+namespace KiUtility
 {
     public static class VectorExtension
     {

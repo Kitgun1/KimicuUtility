@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using KiUtilities.Enums;
-using KiUtilities;
+using KiUtility;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace KiUtilities
+namespace KiUtility
 {
     public static class KiMath
     {
@@ -59,6 +58,11 @@ namespace KiUtilities
             };
         }
 
+        /// <summary>
+        /// Округляет значение числа с плавающей точкой до указанного количества знаков после запятой.
+        /// </summary>
+        /// <param name="format">Формат, который определяет максимальное количество знаков после запятой, до которого нужно округлить. </param>
+        /// <returns></returns>
         public static float Crop(this float value, ValueStringFormat format)
         {
             int digits = int.Parse(format.ToString()[1..]);
@@ -72,7 +76,7 @@ namespace KiUtilities
         /// <param name="count">The number of returned T in the list.</param>
         /// <typeparam name="T">Any object.</typeparam>
         /// <returns>Returns a random list T.</returns>
-        public static T[] RandomWithChance<T>(this List<ObjectChance<T>> list, int count)
+        public static T[] RandomWithChance<T>(this List<ObjectChance<T>> list, int count = 1)
         {
             List<T> result = new List<T>();
 
@@ -179,7 +183,7 @@ namespace KiUtilities
         #region VectorSum
 
         /// <summary>
-        /// Calculate sum vector3 [x + y + z]
+        /// Calculate sum vector3 [|x| + |y| + |z|]
         /// </summary>
         public static float Sum(this Vector3 vector3)
         {
@@ -187,11 +191,11 @@ namespace KiUtilities
         }
 
         /// <summary>
-        /// Calculate sum vector2 [x + y]
+        /// Calculate sum vector2 [|x| + |y|]
         /// </summary>
         public static float Sum(this Vector2 vector2)
         {
-            return vector2.x + vector2.y;
+            return MathF.Abs(vector2.x) + MathF.Abs(vector2.y);
         }
 
         /// <summary>

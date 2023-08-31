@@ -3,10 +3,14 @@ using UnityEngine;
 
 namespace KiYandexSDK
 {
-    public static class YandexSDK
+    public static class WebGL
     {
         private static event Action<bool> OnBackgroundChanged;
         
+        /// <summary>
+        /// Инициализация WebGL
+        /// </summary>
+        /// <param name="onBackgroundChanged"></param>
         public static void Initialize(Action<bool> onBackgroundChanged = null)
         {
             Agava.WebUtility.WebApplication.InBackgroundChangeEvent += InBackgroundChange;
