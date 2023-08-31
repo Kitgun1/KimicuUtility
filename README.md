@@ -8,6 +8,9 @@
     - [Coroutine](#kicoroutine)
   - [Extensions](#extensions)
     - [Camera](#camera)
+    - [CanvasGroup](#canvasgroup)
+    - [Vector](#vector)
+    - [Математика](#математика)
   
 </details>
 
