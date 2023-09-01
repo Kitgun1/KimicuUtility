@@ -16,6 +16,7 @@ namespace KiYandexSDK
         private static bool _advertAvailable = true;
 
         private const int DelayAd = 30;
+        /// <summary> Ключ, по которому сохраняется выключение рекламы. </summary>
         public static string AdvertOffKey = "ADVERT_OFF";
 
         public static void AdvertInitialize()

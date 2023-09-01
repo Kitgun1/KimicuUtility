@@ -1,7 +1,7 @@
 ﻿using KiUtility;
 using UnityEngine;
 
-namespace KimicuUtility
+namespace KimicuUtility.Sample
 {
     public class CoroutineExample : MonoBehaviour
     {
