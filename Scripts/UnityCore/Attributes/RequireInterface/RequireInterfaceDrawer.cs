@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace KiUtility.Attributes
+namespace KiUtility
 {
 #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(RequireInterface))]
@@ -41,7 +41,7 @@ namespace KiUtility.Attributes
             GameObject field = property.objectReferenceValue as GameObject;
             if ((field != null ? field.GetComponent(targetType) : null) != null) return;
             property.objectReferenceValue = null;
-            Debug.LogError("GameObject must contain component implemented " + targetType + " interface");
+            Debug.LogWarning("GameObject must contain component implemented " + targetType + " interface");
         }
 
         private void CheckScriptableObject(SerializedProperty property, Type targetType)
@@ -50,7 +50,7 @@ namespace KiUtility.Attributes
             Type fieldType = field != null ? field.GetType() : null;
             if (targetType.IsAssignableFrom(fieldType) != false) return;
             property.objectReferenceValue = null;
-            Debug.LogError("ScriptableObject must implement " + targetType + " interface");
+            Debug.LogWarning("ScriptableObject must implement " + targetType + " interface");
         }
     }
 #endif

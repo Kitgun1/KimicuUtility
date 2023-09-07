@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KiUtility.Attributes
+namespace KiUtility
 {
     public class RequireInterface : PropertyAttribute
     {
