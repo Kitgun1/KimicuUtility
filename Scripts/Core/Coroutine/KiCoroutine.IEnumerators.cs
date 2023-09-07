@@ -42,7 +42,7 @@ namespace KiUtility
         /// Задержка с циклом.
         /// </summary>
         /// <param name="seconds">Продолжительность задержки в секундах.</param>
-        /// <param name="onUpdate">Действие, выполняемое при обновлении кадра.</param>
+        /// <param name="onUpdate">Действие, выполняемое при обновлении кадра. Передавая число в диапазоне [0, 1]</param>
         /// <param name="onEnd">Действие, выполняемое по завершении задержки.</param>
         public static IEnumerator CyclicDelay(float seconds, Action<float> onUpdate, Action onEnd = null)
         {

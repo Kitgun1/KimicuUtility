@@ -2,9 +2,9 @@
 {
     public enum IgnoreAxis
     {
-        None,
-        IgnoreX,
-        IgnoreY,
-        IgnoreZ
+        None = 0,
+        IgnoreX = 1 << 1,
+        IgnoreY = 1 << 2,
+        IgnoreZ = 1 << 3
     }
 }

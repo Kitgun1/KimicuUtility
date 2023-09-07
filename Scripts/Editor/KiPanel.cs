@@ -16,11 +16,7 @@ namespace KiUtility.Editor
             window.titleContent = new GUIContent("Kimicu Panel");
             window.Show();
         }
-
-        private void CreateGUI()
-        {
-        }
-
+        
         private void OnGUI()
         {
             try

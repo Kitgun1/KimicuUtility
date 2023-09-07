@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+// ReSharper disable InvalidXmlDocComment
+// ReSharper disable MethodOverloadWithOptionalParameter
 
 namespace KiUtility
 {
@@ -123,7 +125,18 @@ namespace KiUtility
         #endregion
 
         #region Dictionary
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dictionary"></param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        public static void TrySetValue<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
+        {
+            if (dictionary.TryAdd(key, value)) dictionary[key] = value;
+        }
+
         public static Dictionary<string, JToken> ToDictionary(this string jsonString)
         {
             var dictionary = new Dictionary<string, JToken>();
