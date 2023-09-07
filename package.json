@@ -1,6 +1,7 @@
 {
   "name": "com.blackbox.kiutility",
-  "version": "1.0.5",
+  "version": "1.0.6",
+  "author": "Kimicu",
   "displayName": "Kimicu Utility",
   "description": "Пакет сделан для облегчения жизни",
   "unity": "2019.1",
