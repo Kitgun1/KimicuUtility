@@ -11,6 +11,9 @@
     - [CanvasGroup](#canvasgroup)
     - [Vector](#vector)
     - [Математика](#математика)
+  - [Attribute](#attribute)
+    - [Require Interface](#require-interface)
+    - [Serialization Dictionary](#serialization-dictionary)
   
 </details>
 
@@ -234,3 +237,51 @@ Vector betweenVector = vector1.GetVectorBetweenPoints(vector2, IgnoreAxis.None);
 ```cs
 float speed = Ridigbody.velocity.Sum(); // (10, -10, 5).Sum() = 25
 ```
+
+---------------------------------------------------------------------------
+
+## Attribute:
+### Require Interface
+```cs
+[RequireInterface(typeof(Interface))] private GameObject _example;
+```
+
+
+### Serialization Dictionary
+1 вариант - использовать готовые заготовки:
+```cs
+[SerializeField] private DictionaryFloatVector3 _dictionaryExample11 = new();
+[SerializeField] private DictionaryStringInt _dictionaryExample2 = new();
+```
+![image](https://github.com/Kitgun1/KimicuUtility/assets/92532054/c2dbd4ac-544f-4a7b-90a7-a028a72cef22)
+
+2 вариант - использовать Dictionary со своими типами, которых нет в 1 варианте:
+Сначала пропысываем где-то вне класса ->
+```cs
+[Serializable] public class MyDictionaryExample : SerializableDictionary<string, GameObject> { } // Указываем свои типы
+#if UNITY_EDITOR
+[CustomPropertyDrawer(typeof(MyDictionaryExample))]
+public class MyDictionaryExampleDrawer : DictionaryDrawer<string, GameObject> { } // Указываем типы из предыдущего поля
+#endif
+```
+После создания своего варианта можно использовать его как в 1 варианте:
+```cs
+[SerializeField] private MyDictionaryExample _myDictionaryExample = new();
+```
+![image](https://github.com/Kitgun1/KimicuUtility/assets/92532054/00f9aa98-9668-4ef4-ae45-47b704e319e9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
