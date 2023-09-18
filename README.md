@@ -29,9 +29,6 @@
 
 Жмем на '+' и выбрать 'Add package from git URL...' и вставить эти дополнительные ссылки:
 <br>``` https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask ```
-<br>``` https://github.com/forcepusher/com.agava.yandexmetrica.git ```
-<br>``` https://github.com/forcepusher/com.agava.webutility.git ```
-<br>``` https://github.com/forcepusher/com.agava.yandexgames.git ```
 
 Далее заходим в папку проекта > Packages > manifest.json и добавляем в **"dependencies"**:
 ```"com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm"```
