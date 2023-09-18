@@ -1,22 +1,17 @@
 {
   "name": "com.blackbox.kiutility",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Kimicu",
   "displayName": "Kimicu Utility",
-  "description": "Пакет сделан для облегчения жизни",
+  "description": "Package for fast develop game.",
   "unity": "2019.1",
   "dependencies": {
   },
   "samples": [
     {
       "displayName": "Coroutines",
-      "description": "Примеры использования корутин",
+      "description": "Usage examples coroutine with Kimicu Utility",
       "path": "Sample~/Coroutines"
-    },
-    {
-      "displayName": "Yandex",
-      "description": "Примеры использования яндекс SDK",
-      "path": "Sample~/Yandex"
     }
   ]
 }

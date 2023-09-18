@@ -1,21 +1,18 @@
-## Содержание
 
-<details>
+|      Languages      |
+|:-------------------:|
+| [Russian](#русский) |
+| [English](#english) |
 
-  - [Описание проекта](#описание-проекта)
-  - [Как добавить в проект](#как-добавить-в-проект)
-  - [Примеры](#примеры)
-    - [Coroutine](#kicoroutine)
-  - [Extensions](#extensions)
-    - [Camera](#camera)
-    - [CanvasGroup](#canvasgroup)
-    - [Vector](#vector)
-    - [Математика](#математика)
-  - [Attribute](#attribute)
-    - [Require Interface](#require-interface)
-    - [Serialization Dictionary](#serialization-dictionary)
-  
-</details>
+# Русский:
++ Текст
+  + Текст
+    + Текст
+
+
+# English:
+
+
 
 ---------------------------------------------------------------------------
 
@@ -27,20 +24,22 @@
 ## Как добавить в проект:
 В Unity открыть 'Window' -> 'Package Manager'.
 
-Жмем на '+' и выбрать 'Add package by name...' и вставить ссылку: 
+Жмем на '+' и выбрать 'Add package by name...' и вставить ссылку:
 <br>``` com.unity.nuget.newtonsoft-json ```
 
-Жмем на '+' и выбрать 'Add package from git URL...' и вставить эти дополнительные ссылки: 
+Жмем на '+' и выбрать 'Add package from git URL...' и вставить эти дополнительные ссылки:
 <br>``` https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask ```
 <br>``` https://github.com/forcepusher/com.agava.yandexmetrica.git ```
 <br>``` https://github.com/forcepusher/com.agava.webutility.git ```
 <br>``` https://github.com/forcepusher/com.agava.yandexgames.git ```
 
-Также нужно добавить [NaughtyAttribute](https://github.com/dbrizov/NaughtyAttributes). Скачиваем архив и закидываем в проект.
+Далее заходим в папку проекта > Packages > manifest.json и добавляем в **"dependencies"**:
+```"com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm"```
+![image](https://github.com/Kitgun1/KimicuUtility/assets/92532054/44f9994e-4e9c-4620-9fca-1bdd9d72f38a)
 
 ### Далее добавляем [KimicuUtility](#далее-добавляем-kimicuutility)
 
-Жмем на '+' и выбрать 'Add package from git URL...' и вставить ссылку: 
+Жмем на '+' и выбрать 'Add package from git URL...' и вставить ссылку:
 <br>``` https://github.com/Kitgun1/KimicuUtility.git ```
 
 Не забудь посмотреть на минимальную требуемую версию Unity в package.json файле.
