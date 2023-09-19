@@ -260,7 +260,7 @@ public class MyDictionaryExampleDrawer : DictionaryDrawer<string, GameObject> { 
 ---------------------------------------------------------------------------
 
 ## Description:
-Этот пакет был разработан специально для упрощения разработки игр на Unity.
+This package was designed specifically to simplify the development of games on Unity.
 
 ---------------------------------------------------------------------------
 
