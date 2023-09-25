@@ -43,7 +43,7 @@ namespace KiUtility.CustomComponent
         {
             if (ValueText != null)
             {
-                ValueText.text = Value.Crop(_maxValueFormat).ToString(CultureInfo.InvariantCulture);
+                ValueText.text = Value.Round(_maxValueFormat).ToString(CultureInfo.InvariantCulture);
             }
 
             if (ValueImage != null)

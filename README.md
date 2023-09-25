@@ -160,9 +160,9 @@ float health1 = 36.1234f;
 float health2 = 36.000012f;
 float health3 = 36.01f;
 
-Debug.Log(health1.Crop(ValueStringFormat.F2)); // Вывод: 36.12
-Debug.Log(health2.Crop(ValueStringFormat.F2)); // Вывод: 36
-Debug.Log(health3.Crop(ValueStringFormat.F6)); // Вывод: 36.01
+Debug.Log(health1.Round(ValueStringFormat.F2)); // Вывод: 36.12
+Debug.Log(health2.Round(ValueStringFormat.F2)); // Вывод: 36
+Debug.Log(health3.Round(ValueStringFormat.F6)); // Вывод: 36.01
 ```
 
 Гибкий рандом - `T[] RandomWithChance<T>()`
@@ -398,9 +398,9 @@ float health1 = 36.1234f;
 float health2 = 36.000012f;
 float health3 = 36.01f;
 
-Debug.Log(health1.Crop(ValueStringFormat.F2)); // Вывод: 36.12
-Debug.Log(health2.Crop(ValueStringFormat.F2)); // Вывод: 36
-Debug.Log(health3.Crop(ValueStringFormat.F6)); // Вывод: 36.01
+Debug.Log(health1.Round(ValueStringFormat.F2)); // Вывод: 36.12
+Debug.Log(health2.Round(ValueStringFormat.F2)); // Вывод: 36
+Debug.Log(health3.Round(ValueStringFormat.F6)); // Вывод: 36.01
 ```
 
 Flexible random - `T[] RandomWithChance<T>()`
