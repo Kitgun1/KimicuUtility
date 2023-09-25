@@ -4,7 +4,19 @@ namespace KiUtility
 {
     public static class KiCameraExtension
     {
-        private static readonly Camera Camera = Camera.main;
+        private static Camera _camera;
+
+        private static Camera Camera
+        {
+            get
+            {
+                TryInitializeCamera();
+                return _camera;
+            }
+            set => _camera = value;
+        }
+
+        private static void TryInitializeCamera() => Camera ??= Camera.main;
 
         /// <summary> Устанавливает позицию объекта относительно позиции на экране. </summary>
         /// <param name="component">Любой Компонент. </param>
@@ -23,12 +35,10 @@ namespace KiUtility
         /// <param name="screenPosition">Позиция на экране. </param>
         /// <param name="z"> Дальность позиции. По умолчанию равно Camera.nearClipPlane. </param>
         /// <returns>Vector3 мировой позиции</returns>
-        public static Vector3 GetWorldSpace(this Vector2 screenPosition, float z = -1)
-        {
-            return z == -1
-                ? Camera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, Camera.nearClipPlane))
-                : Camera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, z));
-        }
+        public static Vector3 GetWorldSpace(this Vector2 screenPosition, float z = -1) => z == -1
+            ? Camera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, Camera.nearClipPlane))
+            : Camera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, z));
+
 
         /// <summary>
         /// Получить мировую точку
@@ -37,10 +47,8 @@ namespace KiUtility
         /// <param name="z"> Дальность позиции. По умолчанию равно Camera.nearClipPlane. </param>
         /// <returns>Vector3 мировой позиции</returns>
         public static Vector3 GetWorldSpace(this Vector3 screenPosition)
-        {
-            return Camera.ScreenToWorldPoint(screenPosition);
-        }
-        
+            => Camera.ScreenToWorldPoint(screenPosition);
+
         /// <param name="screenPosition">
         /// Трехмерная точка с координатами x и y, содержащая точку двухмерного экранного пространства в пикселях.
         /// Нижний левый пиксель экрана — (0,0). Правый верхний пиксель экрана равен (ширина экрана в пикселях – 1,
@@ -48,9 +56,7 @@ namespace KiUtility
         /// </param>
         /// <returns>Возвращает луч, идущий от камеры через точку экрана.</returns>
         public static Ray GetScreenPointToRay(this Vector2 screenPosition)
-        {
-            return Camera.ScreenPointToRay(screenPosition);
-        }
+            => Camera.ScreenPointToRay(screenPosition);
 
         /// <param name="screenPosition">
         /// Трехмерная точка с координатами x и y, содержащая точку двухмерного экранного пространства в пикселях.
@@ -59,8 +65,6 @@ namespace KiUtility
         /// </param>
         /// <returns>Возвращает луч, идущий от камеры через точку экрана.</returns>
         public static Ray GetScreenPointToRay(this Vector3 screenPosition)
-        {
-            return GetScreenPointToRay((Vector2)screenPosition);
-        }
+            => GetScreenPointToRay((Vector2)screenPosition);
     }
 }
