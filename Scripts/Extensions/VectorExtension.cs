@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+﻿using KiUtility;
+using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
-    public static class VectorExtension
+    public static partial class VectorExtension
     {
-        #region Vector4
-
         public static Vector4 ToVector(this VectorBoolean4 vectorBoolean)
         {
             Vector4 result = new();
@@ -26,10 +25,6 @@ namespace KiUtility
             return result;
         }
 
-        #endregion
-
-        #region Vector3
-
         public static Vector3 ToVector(this VectorBoolean3 vectorBoolean)
         {
             Vector3 result = new();
@@ -49,10 +44,6 @@ namespace KiUtility
             return result;
         }
 
-        #endregion
-
-        #region Vector2
-
         public static Vector2 ToVector(this VectorBoolean2 vectorBoolean)
         {
             Vector2 result = new();
@@ -69,6 +60,21 @@ namespace KiUtility
             return result;
         }
 
-        #endregion
+        public static Vector4 ToVector4(this Vector3Int vector) => (Vector3)vector;
+        public static Vector4 ToVector4(this Vector2Int vector) => (Vector3)(Vector2)vector;
+        
+        public static Vector3 ToVector3(this Vector2Int vector) => (Vector2)vector;
+        
+        public static Vector2 ToVector2(this Vector3Int vector) => (Vector3)vector;
+
+        public static Vector3Int ToVector3Int(this Vector4 vector) => new((int)vector.x, (int)vector.y, (int)vector.z);
+        public static Vector3Int ToVector3Int(this Vector3 vector) => new((int)vector.x, (int)vector.y, (int)vector.z);
+        public static Vector3Int ToVector3Int(this Vector2Int vector) => new(vector.x, vector.y, 0);
+        public static Vector3Int ToVector3Int(this Vector2 vector) => new((int)vector.x, (int)vector.y, 0);
+
+        public static Vector2Int ToVector2Int(this Vector4 vector) => new((int)vector.x, (int)vector.y);
+        public static Vector2Int ToVector2Int(this Vector3 vector) => new((int)vector.x, (int)vector.y);
+        public static Vector2Int ToVector2Int(this Vector3Int vector) => new(vector.x, vector.y);
+        public static Vector2Int ToVector2Int(this Vector2 vector) => new((int)vector.x, (int)vector.y);
     }
 }
