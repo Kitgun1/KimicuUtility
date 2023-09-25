@@ -103,14 +103,13 @@ Ray ray = Input.mousePosition.GetScreenPointToRay();
 ```cs
 Bounds bounds = _camera.GetBoundsPercent(-top, -right, -botton, -left);
 ```
-![image](https://github.com/Kitgun1/KimicuUtility/tree/main/Resources/Gifs/example_GetBoundsPercent.gif)
+![image](Resources/Gifs/example_GetBoundsPercent.gif)
 
 Получить гранцицы камеры с учетом отступов (unit)
 ```cs
 Bounds bounds = _camera.GetBoundsUnit(-top, -right, -botton, -left);
 ```
-![image](https://github.com/Kitgun1/KimicuUtility/tree/main/Resources/Gifs/example_GetBoundsUnit.gif)
-
+![image](Resources/Gifs/example_GetBoundsUnit.gif)
 #### CanvasGroup
 Узнать состояние CanvasGroup (ВЫКЛ/ВКЛ) - `canvasGroup.IsActive()`:
 ```cs
@@ -353,13 +352,12 @@ Get camera borders taking into account margins (%)
 ```cs
 Bounds bounds = _camera.GetBoundsPercent(-top, -right, -botton, -left);
 ```
-![image](https://github.com/Kitgun1/KimicuUtility/tree/main/Resources/Gifs/example_GetBoundsPercent.gif)
-
+![image](Resources/Gifs/example_GetBoundsPercent.gif)
 Get camera borders taking into account margins (unit)
 ```cs
 Bounds bounds = _camera.GetBoundsUnit(-top, -right, -botton, -left);
 ```
-![image](https://github.com/Kitgun1/KimicuUtility/tree/main/Resources/Gifs/example_GetBoundsUnit.gif)
+![image](Resources/Gifs/example_GetBoundsPercent.gif)
 
 #### CanvasGroup
 Find out the status of CanvasGroup (OFF/ON) - `canvasGroup.IsActive()`:
