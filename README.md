@@ -357,7 +357,7 @@ Get camera borders taking into account margins (unit)
 ```cs
 Bounds bounds = _camera.GetBoundsUnit(-top, -right, -botton, -left);
 ```
-![image](Resources/Gifs/example_GetBoundsPercent.gif)
+![image](Resources/Gifs/example_GetBoundsUnit.gif)
 
 #### CanvasGroup
 Find out the status of CanvasGroup (OFF/ON) - `canvasGroup.IsActive()`:
