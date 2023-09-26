@@ -16,7 +16,7 @@ namespace KiUtility
             set => _camera = value;
         }
 
-        private static void TryInitializeCamera() => Camera ??= Camera.main;
+        private static void TryInitializeCamera() => _camera ??= Camera.main;
 
         /// <summary> Sets the position of the transform in world space based on a screen position. </summary>
         /// <param name="component">The component to set the position of.</param>
