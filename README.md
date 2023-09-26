@@ -103,13 +103,17 @@ Ray ray = Input.mousePosition.GetScreenPointToRay();
 ```cs
 Bounds bounds = _camera.GetBoundsPercent(-top, -right, -botton, -left);
 ```
+
 ![image](Resources/Gifs/example_GetBoundsPercent.gif)
+
 
 Получить гранцицы камеры с учетом отступов (unit)
 ```cs
 Bounds bounds = _camera.GetBoundsUnit(-top, -right, -botton, -left);
 ```
+
 ![image](Resources/Gifs/example_GetBoundsUnit.gif)
+
 #### CanvasGroup
 Узнать состояние CanvasGroup (ВЫКЛ/ВКЛ) - `canvasGroup.IsActive()`:
 ```cs
