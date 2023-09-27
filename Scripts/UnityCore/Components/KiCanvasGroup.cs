@@ -15,13 +15,13 @@ namespace KimicuUtility.Scripts.UnityCore.Components
         }
 
         [Button("OFF")]
-        private void TurnOff()
+        public void TurnOff()
         {
             _canvasGroup.Active(false);
         }
 
         [Button("ON")]
-        private void TurnOn()
+        public void TurnOn()
         {
             _canvasGroup.Active(true);
         }
