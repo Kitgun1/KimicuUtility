@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     public partial class KiCoroutine
     {
         private Coroutine _routine;
 
-        /// <summary>Запускает IEnumerator.</summary>
-        /// <param name="forced">Принудительная остановка предыдущей рутины, если она уже запущена.</param>
+        /// <summary> Start new coroutine. </summary>
+        /// <param name="forced"> Forcibly stopping the previous routine if it is already running. </param>
         public void StartRoutine(IEnumerator enumerator, bool forced = false)
         {
             if (_routine != null)
@@ -20,7 +20,7 @@ namespace KiUtility
             _routine = KiCoroutines.StartRoutine(enumerator);
         }
 
-        /// <summary> Остановка существующей рутины. </summary>
+        /// <summary> Stop current coroutine. </summary>
         public void StopRoutine()
         {
             if (_routine == null) return;

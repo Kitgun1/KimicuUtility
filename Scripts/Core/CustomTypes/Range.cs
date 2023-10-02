@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     /// <summary>
     /// Структура с минимальным и максимальным значением TValue

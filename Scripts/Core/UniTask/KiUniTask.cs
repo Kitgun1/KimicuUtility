@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     public static class KiUniTask
     {

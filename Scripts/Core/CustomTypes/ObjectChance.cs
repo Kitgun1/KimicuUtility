@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     /// <summary>
     /// Структура с объектом и его шансом в пределах [0, 100]

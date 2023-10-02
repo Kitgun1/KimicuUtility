@@ -6,7 +6,7 @@ using UnityEngine;
 // ReSharper disable InvalidXmlDocComment
 // ReSharper disable MethodOverloadWithOptionalParameter
 
-namespace KiUtility
+namespace KimicuUtility
 {
     public static class KiCollectionExtension
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace KiUtility.CustomComponent
+namespace KimicuUtility
 {
     [CreateAssetMenu(fileName = "new Slider Settings", menuName = "Kimicu/SliderSettings", order = 0)]
     public class SliderSettings : ScriptableObject

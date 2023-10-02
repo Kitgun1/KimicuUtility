@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     public sealed class KiCoroutines : MonoBehaviour
     {

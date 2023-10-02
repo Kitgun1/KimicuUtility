@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace KiUtility.CustomComponent
+namespace KimicuUtility
 {
     internal static class KiSliderEditor
     {

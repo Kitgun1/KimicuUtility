@@ -1,4 +1,4 @@
-namespace KiUtility
+namespace KimicuUtility
 {
     public static partial class KiMath
     {

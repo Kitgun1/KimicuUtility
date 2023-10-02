@@ -1,5 +1,4 @@
-﻿using KiUtility;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace KimicuUtility
 {

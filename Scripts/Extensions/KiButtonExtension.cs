@@ -1,7 +1,7 @@
 ﻿using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     public static class KiButtonExtension
     {

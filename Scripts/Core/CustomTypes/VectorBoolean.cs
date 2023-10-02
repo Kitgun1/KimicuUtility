@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     [Serializable]
     public class VectorBoolean3

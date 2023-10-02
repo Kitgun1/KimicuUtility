@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
     public partial class KiCoroutine
     {

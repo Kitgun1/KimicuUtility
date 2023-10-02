@@ -1,8 +1,7 @@
-﻿using KiUtility;
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
 using UnityEngine;
 
-namespace KimicuUtility.Scripts.UnityCore.Components
+namespace KimicuUtility
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class KiCanvasGroup : MonoBehaviour

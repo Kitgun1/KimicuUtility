@@ -1,5 +1,4 @@
 ﻿using System;
-using KiUtility;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif

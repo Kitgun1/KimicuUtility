@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace KiUtility
+namespace KimicuUtility
 {
 #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(RequireInterface))]

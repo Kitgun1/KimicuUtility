@@ -1,11 +1,10 @@
 ﻿using System.Globalization;
-using KiUtility;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace KiUtility.CustomComponent
+namespace KimicuUtility
 {
     public class KiSlider : MonoBehaviour
     {
