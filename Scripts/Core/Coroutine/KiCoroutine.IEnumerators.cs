@@ -28,11 +28,12 @@ namespace KimicuUtility
         public static IEnumerator RecurringDelay(float seconds, uint repetitionsAmount = 1, Action<uint> onNext = null,
             Action onEnd = null)
         {
-            while (repetitionsAmount > 0)
+            uint currentRepetitionsAmount = repetitionsAmount;
+            while (currentRepetitionsAmount > 0)
             {
-                yield return new WaitForSeconds(seconds / repetitionsAmount);
-                repetitionsAmount--;
-                onNext?.Invoke(repetitionsAmount);
+                yield return new WaitForSeconds(seconds / currentRepetitionsAmount);
+                currentRepetitionsAmount--;
+                onNext?.Invoke(currentRepetitionsAmount);
             }
 
             onEnd?.Invoke();
