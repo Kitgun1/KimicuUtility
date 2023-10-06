@@ -31,7 +31,7 @@ namespace KimicuUtility
             uint currentRepetitionsAmount = repetitionsAmount;
             while (currentRepetitionsAmount > 0)
             {
-                yield return new WaitForSeconds(seconds / currentRepetitionsAmount);
+                yield return new WaitForSeconds(seconds / repetitionsAmount);
                 currentRepetitionsAmount--;
                 onNext?.Invoke(currentRepetitionsAmount);
             }
