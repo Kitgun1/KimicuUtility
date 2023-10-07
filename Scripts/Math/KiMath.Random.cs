@@ -7,12 +7,12 @@ namespace KimicuUtility
     {
         /// <summary> Takes n elements from the structure of objects with chances. </summary>
         /// <param name="list">Structure with objects and its chance.</param>
-        /// <param name="count">The number of returned T in the list.</param>
+        /// <param name="count">The number of returned T in the queue.</param>
         /// <typeparam name="T">Any object.</typeparam>
-        /// <returns>Returns a random list T.</returns>
-        public static T[] RandomWithChance<T>(this List<ObjectChance<T>> list, int count = 1)
+        /// <returns>Returns a random queue T.</returns>
+        public static Queue<T> RandomWithChance<T>(this List<ObjectChance<T>> list, int count = 1)
         {
-            List<T> result = new List<T>();
+            var result = new Queue<T>();
 
             for (int i = 0; i < count; i++)
             {
@@ -35,12 +35,23 @@ namespace KimicuUtility
                 {
                     cumulativeChance += objChance.Chance;
                     if (randomValue >= cumulativeChance) continue;
-                    result.Add(objChance.Object);
+                    result.Enqueue(objChance.Object);
                     break;
                 }
             }
 
-            return result.ToArray();
+            return result;
+        }
+
+        public static Queue<T> RandomQueue<T>(this List<T> list, int count = 1)
+        {
+            var result = new Queue<T>();
+            for (int i = 0; i < count; i++)
+            {
+                result.Enqueue(list[Random.Range(0, list.Count)]);
+            }
+
+            return result;
         }
     }
 }

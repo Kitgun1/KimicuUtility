@@ -159,7 +159,7 @@ namespace KimicuUtility
             TValue value = default;
             try
             {
-                _dictionary.Add(key, value);
+                _dictionary.TryAdd(key, value);
             }
             catch (Exception e)
             {

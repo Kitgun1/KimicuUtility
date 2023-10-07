@@ -1,10 +1,11 @@
 {
   "name": "com.blackbox.kiutility",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "author": "Kimicu",
   "displayName": "Kimicu Utility",
   "description": "Package for fast develop game.",
   "unity": "2019.1",
+  "changelogUrl": "https://github.com/Kitgun1/KimicuUtility/blob/main/CHANGELOG.md",
   "dependencies": {
   },
   "samples": [
