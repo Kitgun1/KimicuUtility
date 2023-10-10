@@ -27,8 +27,6 @@ namespace KimicuUtility
             if (_routine == null) return;
             KiCoroutines.StopRoutine(_routine);
             _routine = null;
-
-            // hi by artem
         }
     }
 }
