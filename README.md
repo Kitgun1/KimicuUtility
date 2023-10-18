@@ -1,5 +1,8 @@
-# Русский:
+# Kimicu Utility
+
 + [Описание проекта](#описание-проекта)
++ [Связь](#связь)
++ [Поддержать проект](#поддержать-проект)
 + [Как добавить в проект](#как-добавить-в-проект)
 + [Примеры](#примеры)
   + [Корутины](#корутины)
@@ -20,13 +23,31 @@
 
 ---------------------------------------------------------------------------
 
+## Связь:
+Если остались вопросы, пиишите в тг -> `@KimicuK`
+или пишите [тут](https://github.com/Kitgun1/KimicuUtility/discussions)
+
+---------------------------------------------------------------------------
+
+## Поддержать проект:
+Вы можете отправить донат ->
+```
+https://www.donationalerts.com/r/kimicu
+```
+<details>
+
+<summary> QR Code </summary>
+
+![image](ResourcesGit~/donation_qrcode.png)
+
+</details>
+
+---------------------------------------------------------------------------
+
 ## Как добавить в проект:
 В Unity `Window` -> `Package Manager`.
 <br>Жмем на `+` и выбрать `Add package by name...` и вставить ссылку:
 <br>``` com.unity.nuget.newtonsoft-json ```
-
-Жмем на `+` и выбрать `Add package from git URL...` и вставить эти дополнительные ссылки:
-<br>``` https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask ```
 
 Далее заходим в папку проекта > `Packages` > `manifest.json` и добавляем в **"dependencies"**:
 ```"com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm"```
