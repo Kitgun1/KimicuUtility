@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -7,7 +8,7 @@ namespace KimicuUtility
 {
     internal static class KiSliderEditor
     {
-#if UNITY_EDITOR
+
         [MenuItem("GameObject/UI/Kimicu/Slider")]
         private static void CreateSlider()
         {
@@ -19,6 +20,7 @@ namespace KimicuUtility
             transform.anchoredPosition = Vector2.zero;
             transform.gameObject.name = "KiSlider";
         }
-#endif
+
     }
 }
+#endif

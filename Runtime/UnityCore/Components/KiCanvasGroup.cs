@@ -6,28 +6,15 @@ namespace KimicuUtility
     [RequireComponent(typeof(CanvasGroup))]
     public class KiCanvasGroup : MonoBehaviour
     {
-        private CanvasGroup _canvasGroup;
+        private CanvasGroup m_CanvasGroup;
 
-        private void Awake()
-        {
-            _canvasGroup ??= GetComponent<CanvasGroup>();
-        }
-
-        private void OnValidate()
-        {
-            _canvasGroup ??= GetComponent<CanvasGroup>();
-        }
+        private void Awake() => m_CanvasGroup ??= GetComponent<CanvasGroup>();
+        private void OnValidate() => m_CanvasGroup ??= GetComponent<CanvasGroup>();
 
         [Button("OFF")]
-        public void TurnOff()
-        {
-            _canvasGroup.Active(false);
-        }
+        public void TurnOff() => m_CanvasGroup.Active(false);
 
         [Button("ON")]
-        public void TurnOn()
-        {
-            _canvasGroup.Active(true);
-        }
+        public void TurnOn() => m_CanvasGroup.Active(true);
     }
 }

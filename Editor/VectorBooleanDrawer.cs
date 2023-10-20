@@ -18,10 +18,10 @@ namespace KimicuUtility.Editor
 
             float width = position.width / 4;
 
-            Rect xRect = new Rect(position.x, position.y, width, position.height);
-            Rect yRect = new Rect(position.x + width, position.y, width, position.height);
-            Rect zRect = new Rect(position.x + 2 * width, position.y, width, position.height);
-            Rect wRect = new Rect(position.x + 3 * width, position.y, width, position.height);
+            Rect xRect = new Rect(position.x + 15, position.y, width, position.height);
+            Rect yRect = new Rect(position.x + width + 15, position.y, width, position.height);
+            Rect zRect = new Rect(position.x + 2 * width + 15, position.y, width, position.height);
+            Rect wRect = new Rect(position.x + 3 * width + 15, position.y, width, position.height);
 
             EditorGUI.PropertyField(xRect, property.FindPropertyRelative("X"), GUIContent.none);
             xRect.position += new Vector2(-15, 0);
@@ -56,8 +56,8 @@ namespace KimicuUtility.Editor
 
             float width = position.width / 4;
 
-            Rect xRect = new Rect(position.x, position.y, width, position.height);
-            Rect yRect = new Rect(position.x + width, position.y, width, position.height);
+            Rect xRect = new Rect(position.x + 15, position.y, width, position.height);
+            Rect yRect = new Rect(position.x + width + 15, position.y, width, position.height);
 
             EditorGUI.PropertyField(xRect, property.FindPropertyRelative("X"), GUIContent.none);
             xRect.position += new Vector2(-15, 0);
@@ -86,9 +86,9 @@ namespace KimicuUtility.Editor
 
             float width = position.width / 4;
 
-            Rect xRect = new Rect(position.x, position.y, width, position.height);
-            Rect yRect = new Rect(position.x + width, position.y, width, position.height);
-            Rect zRect = new Rect(position.x + 2 * width, position.y, width, position.height);
+            Rect xRect = new Rect(position.x + 15, position.y, width, position.height);
+            Rect yRect = new Rect(position.x + width + 15, position.y, width, position.height);
+            Rect zRect = new Rect(position.x + 2 * width + 15, position.y, width, position.height);
 
             EditorGUI.PropertyField(xRect, property.FindPropertyRelative("X"), GUIContent.none);
             xRect.position += new Vector2(-15, 0);
