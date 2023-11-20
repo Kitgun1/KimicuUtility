@@ -6,9 +6,7 @@ namespace KimicuUtility
 {
     public static class KiButtonExtension
     {
-        // Add
-        public static void AddListener(this Button button, UnityAction call)
-            => button.onClick.AddListener(call);
+        public static void AddListener(this Button button, UnityAction call) => button.onClick.AddListener(call);
 
         public static void AddRangeListener(this Button button, IEnumerable<UnityAction> calls)
             => button.onClick.AddRangeListener(calls);
@@ -18,9 +16,7 @@ namespace KimicuUtility
             foreach (UnityAction call in calls) onClick.AddListener(call);
         }
 
-        // Remove
-        public static void RemoveListener(this Button button, UnityAction call)
-            => button.onClick.RemoveListener(call);
+        public static void RemoveListener(this Button button, UnityAction call) => button.onClick.RemoveListener(call);
 
         public static void RemoveRangeListener(this Button button, IEnumerable<UnityAction> calls)
             => button.onClick.RemoveRangeListener(calls);
@@ -30,7 +26,6 @@ namespace KimicuUtility
             foreach (UnityAction call in calls) onClick.RemoveListener(call);
         }
 
-        public static void RemoveAllListener(this Button button)
-            => button.onClick.RemoveAllListeners();
+        public static void RemoveAllListener(this Button button) => button.onClick.RemoveAllListeners();
     }
 }

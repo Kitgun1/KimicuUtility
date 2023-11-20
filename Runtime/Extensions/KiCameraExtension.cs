@@ -6,7 +6,8 @@ namespace KimicuUtility
     {
         private static Camera _camera;
 
-        private static Camera Camera
+        /// <summary> The camera on which calculations will be carried out. </summary>
+        public static Camera Camera
         {
             get
             {
@@ -53,8 +54,8 @@ namespace KimicuUtility
         /// <summary> Returns a ray going from camera through a screen point. </summary>
         /// <param name="screenPosition">The position on the screen in pixels.</param>
         /// <returns>A ray going from camera through the screen point.</returns>
-        public static Ray GetScreenPointToRay(this Vector3 screenPosition)
-            => GetScreenPointToRay((Vector2)screenPosition);
+        public static Ray GetScreenPointToRay(this Vector3 screenPosition) =>
+            GetScreenPointToRay((Vector2)screenPosition);
 
         /// <summary> Calculates the bounds of a camera view, given percentages of the screen to include on each side. </summary>
         /// <param name="camera"> The camera to calculate the bounds for. </param>

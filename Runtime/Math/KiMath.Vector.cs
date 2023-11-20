@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace KimicuUtility
 {
-    
     public static partial class KiMath
     {
         /// <summary> Calculates the vector between two points in 3D space, optionally ignoring one of the axes. </summary>
@@ -105,5 +104,25 @@ namespace KimicuUtility
         }
 
         #endregion
+
+        public static Vector3 Snap(Vector3 vector, float snappingValue)
+        {
+            float x = Snap(vector.x, snappingValue);
+            float y = Snap(vector.y, snappingValue);
+            float z = Snap(vector.z, snappingValue);
+            return new Vector3(x, y, z);
+        }
+
+        public static Vector2 Snap(Vector2 vector, float snappingValue)
+        {
+            float x = Snap(vector.x, snappingValue);
+            float y = Snap(vector.y, snappingValue);
+            return new Vector2(x, y);
+        }
+
+        public static float Snap(float value, float snappingValue)
+        {
+            return Mathf.Round(value / snappingValue) * snappingValue;
+        }
     }
 }

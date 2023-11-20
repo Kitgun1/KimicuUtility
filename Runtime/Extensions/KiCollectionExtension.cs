@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+
 // ReSharper disable InvalidXmlDocComment
 // ReSharper disable MethodOverloadWithOptionalParameter
 
@@ -12,28 +13,20 @@ namespace KimicuUtility
     {
         #region List
 
-        /// <summary> Ограничивает максимальное кол-во элементов в списке. </summary>
+        /// <summary> Limits the maximum number of elements in the list. </summary>
         public static void Clamp<T>(this List<T> list, int maximum = 1)
         {
             if (maximum < 1) maximum = 0;
-
-            if (list.Count > maximum)
-            {
-                list.RemoveRange(maximum, list.Count - maximum);
-            }
+            if (list.Count > maximum) list.RemoveRange(maximum, list.Count - maximum);
         }
 
-        /// <summary> Ограничивает список максимальным и минимальным значением. </summary>
-        /// <param name="defaultElement"> Элемент который будет добавлен при нехватке элементов в списке. </param>
+        /// <summary> Limits the list to a maximum and minimum value. </summary>
+        /// <param name="defaultElement"> An element that will be added if there are not enough elements in the list. </param>
         public static void Clamp<T>(this List<T> list, int minimum = 1, int maximum = 1, T defaultElement = default)
         {
             minimum = Mathf.Clamp(minimum, 1, int.MaxValue);
             maximum = Mathf.Clamp(maximum, minimum, int.MaxValue);
-
-            if (list.Count > maximum)
-            {
-                list.RemoveRange(maximum, list.Count - maximum);
-            }
+            if (list.Count > maximum) list.RemoveRange(maximum, list.Count - maximum);
             else if (list.Count < minimum)
             {
                 int count = minimum - list.Count;
@@ -41,21 +34,18 @@ namespace KimicuUtility
             }
         }
 
-        /// <summary> Ограничивает список максимальным и минимальным значением. </summary>
-        /// <param name="defaultElement"> Элемент который будет добавлен при нехватке элементов в списке. </param>
+        /// <summary> Limits the list to a maximum and minimum value. </summary>
+        /// <param name="defaultElement"> An element that will be added if there are not enough elements in the list. </param>
         public static void Clamp<T>(this List<T> list, int minimum = 0, T defaultElement = default)
         {
             minimum = Mathf.Clamp(minimum, 0, int.MaxValue);
-
-            if (list.Count < minimum)
-            {
-                int count = minimum - list.Count;
-                for (int i = 0; i < count; i++) list.Insert(0, defaultElement);
-            }
+            if (list.Count >= minimum) return;
+            int count = minimum - list.Count;
+            for (int i = 0; i < count; i++) list.Insert(0, defaultElement);
         }
 
-        /// <summary> Делит список на списки. </summary>
-        /// <param name="percentRatio"> Делит список на списки по процентное соотношение. </param>
+        /// <summary> Divides a list into lists. </summary>
+        /// <param name="percentRatio"> Divides the list into lists by percentage. </param>
         public static List<List<T>> SplitList<T>(this List<T> list, int percentRatio)
         {
             int count = list.Count;
@@ -66,26 +56,16 @@ namespace KimicuUtility
             return result;
         }
 
-
-        /// <summary> Делит список на списки. </summary>
-        /// <param name="percentages">  Сумма элементов не должна превышать 100 и не должна быть меньше 0 и каждый элемент должен быть положительным </param>
+        /// <summary> Divides a list into lists. </summary>
+        /// <param name="percentages"> The sum of the elements must not exceed 100 and must not be less than 0 and each element must be positive. </param>
         public static List<List<T>> SplitList<T>(this List<T> list, double[] percentages)
         {
             double sumPercentages = percentages.Sum();
-
-            for (int i = 0; i < percentages.Length; i++)
-            {
-                if (percentages[i] < 0) throw new ArgumentOutOfRangeException($"{i} элемент списка не может быть < 0f");
-            }
-
-            if (sumPercentages is > 100 or < 0)
-                throw new ArgumentException("Sum of percentages should be in range (0, 100)");
-
+            for (int i = 0; i < percentages.Length; i++) if (percentages[i] < 0) throw new ArgumentOutOfRangeException($"{i} list element cannot be < 0f");
+            if (sumPercentages is > 100 or < 0) throw new ArgumentException("Sum of percentages should be in range (0, 100)");
             var result = new List<List<T>>();
-
             int startIndex = 0;
             int n = percentages.Length;
-
             for (int i = 0; i < n; i++)
             {
                 int count = (int)(list.Count * percentages[i] / 100);
@@ -96,16 +76,14 @@ namespace KimicuUtility
 
                 result.Add(sublist);
             }
-
             return result;
         }
 
-        /// <summary> Делит список на части. </summary>
+        /// <summary> Divides a list into parts. </summary>
         public static List<List<T>> DivideList<T>(this List<T> list, int count)
         {
             int size = list.Count / count;
             int remainder = list.Count % count;
-
             var result = new List<List<T>>();
 
             for (int i = 0; i < count; i++)
@@ -125,13 +103,7 @@ namespace KimicuUtility
         #endregion
 
         #region Dictionary
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="dictionary"></param>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        
         public static void TrySetValue<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
         {
             if (dictionary.TryAdd(key, value)) dictionary[key] = value;

@@ -9,7 +9,7 @@ namespace KimicuUtility
         public bool Y;
         public bool Z;
 
-        public VectorBoolean3(bool x, bool y, bool z)
+        public VectorBoolean3(bool x = false, bool y = false, bool z = false)
         {
             X = x;
             Y = y;
@@ -23,7 +23,7 @@ namespace KimicuUtility
         public bool X;
         public bool Y;
 
-        public VectorBoolean2(bool x, bool y)
+        public VectorBoolean2(bool x = false, bool y = false)
         {
             X = x;
             Y = y;
@@ -38,7 +38,7 @@ namespace KimicuUtility
         public bool Z;
         public bool W;
 
-        public VectorBoolean4(bool x, bool y, bool z, bool w)
+        public VectorBoolean4(bool x = false, bool y = false, bool z = false, bool w = false)
         {
             X = x;
             Y = y;
