@@ -6,6 +6,6 @@ namespace KimicuUtility
     {
         public static Vector3 Snap(this Vector3 vector, float snappingValue) => KiMath.Snap(vector, snappingValue);
         public static Vector2 Snap(this Vector2 vector, float snappingValue) => KiMath.Snap(vector, snappingValue);
-        public static float Snap(this float vector, float snappingValue) => KiMath.Snap(vector, snappingValue);
+        public static float Snap(this float value, float snappingValue) => KiMath.Snap(value, snappingValue);
     }
 }
