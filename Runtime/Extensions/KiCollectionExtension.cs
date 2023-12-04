@@ -143,7 +143,7 @@ namespace KimicuUtility
                         json.Append("\"" + item.Key + "\":\"" + item.Value + "\"");
                         break;
                     default:
-                        json.Append("\"" + item.Key + "\":\"" + item.Value);
+                        json.Append("\"" + item.Key + "\":" + item.Value);
                         break;
                 }
 
