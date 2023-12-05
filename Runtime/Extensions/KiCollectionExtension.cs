@@ -159,7 +159,7 @@ namespace KimicuUtility
             }
 
             json.Append('}');
-            return json.ToString();
+            return json.ToString().Replace("\r\n", "");
         }
 
         private static bool StartsWith(string str, char character)
