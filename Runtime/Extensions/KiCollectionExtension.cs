@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -120,25 +122,62 @@ namespace KimicuUtility
 
         public static string ToJson(this Dictionary<string, JToken> dictionary)
         {
-            string jsonString = "{";
+            StringBuilder json = new StringBuilder();
+            json.Append("{");
+            int counter = 0;
             foreach (var item in dictionary)
+            {
+                bool isLast = counter + 1 == dictionary.Count;
                 switch (item.Value.Type)
                 {
                     case JTokenType.Boolean:
-                        jsonString += "\"" + item.Key + "\":" + item.Value.ToString().ToLower() + ",";
+                        json.Append("\"" + item.Key + "\":" + item.Value.ToString().ToLower());
                         break;
                     case JTokenType.Float:
                     case JTokenType.Integer:
-                        jsonString += "\"" + item.Key + "\":" + item.Value + ",";
+                    case JTokenType.Object:
+                    case JTokenType.Array:
+                        json.Append("\"" + item.Key + "\":" + item.Value);
                         break;
                     case JTokenType.String:
+                        if(StartsWith(item.Value.ToString(), '[') || StartsWith(item.Value.ToString(), '{'))
+                            json.Append("\"" + item.Key + "\":" + item.Value);
+                        else
+                            json.Append("\"" + item.Key + "\":\"" + item.Value + "\"");
+                        break;
                     default:
-                        jsonString += "\"" + item.Key + "\":\"" + item.Value + "\",";
+                        json.Append("\"" + item.Key + "\":" + item.Value);
                         break;
                 }
 
-            jsonString = jsonString.TrimEnd(',') + "}";
-            return jsonString;
+                if (!isLast)
+                {
+                    json.Append(',');
+                }
+
+                counter++;
+            }
+
+            json.Append('}');
+            return json.ToString();
+        }
+
+        private static bool StartsWith(string str, char character)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                var strCharacter = str[i];
+                if (char.IsControl(strCharacter))
+                    continue;
+                if(char.IsWhiteSpace(strCharacter))
+                    continue;
+                if (strCharacter == character)
+                    return true;
+                if (char.IsLetterOrDigit(strCharacter))
+                    return false;
+            }
+
+            return false;
         }
 
         #endregion
