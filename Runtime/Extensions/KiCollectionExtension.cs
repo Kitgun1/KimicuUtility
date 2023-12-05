@@ -140,7 +140,10 @@ namespace KimicuUtility
                         json.Append("\"" + item.Key + "\":" + item.Value);
                         break;
                     case JTokenType.String:
-                        json.Append("\"" + item.Key + "\":\"" + item.Value + "\"");
+                        if(StartsWith(item.Value.ToString(), '[') || StartsWith(item.Value.ToString(), '{'))
+                            json.Append("\"" + item.Key + "\":" + item.Value);
+                        else
+                            json.Append("\"" + item.Key + "\":\"" + item.Value + "\"");
                         break;
                     default:
                         json.Append("\"" + item.Key + "\":" + item.Value);
@@ -157,6 +160,24 @@ namespace KimicuUtility
 
             json.Append('}');
             return json.ToString();
+        }
+
+        private static bool StartsWith(string str, char character)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                var strCharacter = str[i];
+                if (char.IsControl(strCharacter))
+                    continue;
+                if(char.IsWhiteSpace(strCharacter))
+                    continue;
+                if (strCharacter == character)
+                    return true;
+                if (char.IsLetterOrDigit(strCharacter))
+                    return false;
+            }
+
+            return false;
         }
 
         #endregion
