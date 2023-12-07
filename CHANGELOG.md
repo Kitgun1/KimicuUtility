@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.0.23] - 07.12.2023
+### Fixed
+- The `KiMath.Snap()` method no longer produces NaN when set to 0.
+
 ## [1.0.22] - 04.12.2023
 ### Added
 - Added DestroyGameObject extension method.

@@ -122,6 +122,7 @@ namespace KimicuUtility
 
         public static float Snap(float value, float snappingValue)
         {
+            if (snappingValue == 0) return value;
             return Mathf.Round(value / snappingValue) * snappingValue;
         }
     }
