@@ -16,19 +16,19 @@ namespace KimicuUtility
             switch (ignoreAxis)
             {
                 case IgnoreAxis.None:
-                    return position1 - position2;
+                    return (position1 + position2) / 2f;
                 case IgnoreAxis.IgnoreX:
                     position1.x = 0;
                     position2.x = 0;
-                    return position1 - position2;
+                    return (position1 + position2) / 2f;
                 case IgnoreAxis.IgnoreY:
                     position1.y = 0;
                     position2.y = 0;
-                    return position1 - position2;
+                    return (position1 + position2) / 2f;
                 case IgnoreAxis.IgnoreZ:
                     position1.z = 0;
                     position2.z = 0;
-                    return position1 - position2;
+                    return (position1 + position2) / 2f;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ignoreAxis), ignoreAxis, null);
             }
@@ -46,27 +46,7 @@ namespace KimicuUtility
         {
             Vector3 position1 = point1.transform.position;
             Vector3 position2 = point2.transform.position;
-            switch (ignoreAxis)
-            {
-                case IgnoreAxis.None:
-                    break;
-                case IgnoreAxis.IgnoreX:
-                    position1.x = 0;
-                    position2.x = 0;
-                    break;
-                case IgnoreAxis.IgnoreY:
-                    position1.y = 0;
-                    position2.y = 0;
-                    break;
-                case IgnoreAxis.IgnoreZ:
-                    position1.z = 0;
-                    position2.z = 0;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(ignoreAxis), ignoreAxis, null);
-            }
-
-            return position1 - position2;
+            return position1.GetVectorBetweenPoints(position2);
         }
 
         #region VectorSum
