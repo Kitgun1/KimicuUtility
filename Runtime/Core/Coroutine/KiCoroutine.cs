@@ -8,15 +8,16 @@ namespace KimicuUtility
         private Coroutine _routine;
 
         /// <summary> Start new coroutine. </summary>
-        /// <param name="forced"> Forcibly stopping the previous routine if it is already running. </param>
-        public bool StartRoutine(IEnumerator enumerator, bool forced = false)
+        public void StartRoutine(IEnumerator enumerator)
         {
-            if (_routine != null)
-            {
-                if (forced) StopRoutine();
-                else return false;
-            }
+            StopRoutine();
+            _routine = KiCoroutines.StartRoutine(enumerator);
+        }
 
+        /// <summary> Try start new coroutine. </summary>
+        public bool TryStartRoutine(IEnumerator enumerator)
+        {
+            if (_routine != null) return false;
             _routine = KiCoroutines.StartRoutine(enumerator);
             return true;
         }
