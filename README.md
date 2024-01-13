@@ -202,13 +202,13 @@ Debug.Log(health3.Round(ValueStringFormat.F6)); // Вывод: 36.01
 // Определим список с object и их шансом
 var objectChanceList = new List<ObjectChance>()
 {
-  new ObjectChance {object, 25}, // выпадает с шансом 25%
-  new ObjectChance {object, 20}, // выпадает с шансом 20%
-  new ObjectChance {object, 50}, // выпадает с шансом 50%
-  new ObjectChance {object, 100}  // выпадает с шансом 100%
+  new ObjectChance<type>(object, 25), // выпадает с шансом 25%
+  new ObjectChance<type>(object, 20), // выпадает с шансом 20%
+  new ObjectChance<type>(object, 50), // выпадает с шансом 50%
+  new ObjectChance<type>(object, 100)  // выпадает с шансом 100%
   // Если сумма будет больше 100%, то щансы будут автоматически выровнены.
 }
-T[] winObjects = objectChanceList.RandomWithChance<T>(int count = 1);
+var winObjects = objectChanceList.RandomWithChance<type>(int count = 1);
 ```
 
 Позиции между 2-мя точками с игнорированием осей - `Vector3.GetVectorBetweenPoints()`
