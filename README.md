@@ -200,14 +200,14 @@ Debug.Log(health3.Round(ValueStringFormat.F6)); // Вывод: 36.01
 Гибкий рандом - `T[] RandomWithChance<T>()`
 ```cs
 // Определим список с object и их шансом
-var objectChanceList = new List<ObjectChance>()
+var objectChanceList = new List<ObjectChance<type>>()
 {
   new ObjectChance<type>(object, 25), // выпадает с шансом 25%
   new ObjectChance<type>(object, 20), // выпадает с шансом 20%
   new ObjectChance<type>(object, 50), // выпадает с шансом 50%
   new ObjectChance<type>(object, 100)  // выпадает с шансом 100%
   // Если сумма будет больше 100%, то щансы будут автоматически выровнены.
-}
+};
 var winObjects = objectChanceList.RandomWithChance<type>(int count = 1);
 ```
 
